@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{% static 'website/js/language.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/references.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/contact.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/service.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Raleway|Open+Sans" rel="stylesheet">
+    <title>Permanent</title>
+</head>
+
+<body>
+    <div class="container-fluid" id="container">
+
+          <nav id="navbar" class="navbar navbar-light navbar-expand-md bg-faded fixed-top justify-content-center">
+            <a href="/" class="navbar-brand d-flex w-25 mr-auto">
+                <img alt="Permanent" src="{% static 'website/media/logoHeader2.png'%}">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse navbar-center collapse w-100" id="collapsibleNavbar">
+                <ul class="navbar-nav w-100 justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="home" onclick="navTab(this);"><span id="nav_home_sr_span" class="sr">O nama</span><span class="en" >About us</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="service"><span class="sr">Usluge i online ponuda</span><span class="en" >Services and online offer</span></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="reference"><span class="sr">Reference</span><span class="en" >References</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact"><span class="sr">Kontakt</span><span class="en" >Contact</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown">
+                          <span class="sr">Jezik</span><span class="en">Language</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" id="language-dropdown">
+                            <a id="sr-btn" class="dropdown-item" onclick="serbian()">Srpski</a>
+                            <a id="en-btn" class="dropdown-item" onclick="english()">English</a>
+                        </div>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <!--  <footer id="footer">
+
+       </footer> -->
+    <!--  <footer id="footer" class="footer">
+          <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
+    </footer> -->
+</body>
+
+</html>

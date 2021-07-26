@@ -1,0 +1,288 @@
+{% extends 'website/index.html' %}
+{% load static %}
+{% block content %}
+<script src="{% static 'website/js/service.js' %}"></script>
+<div id="services-page" class="justify-content-center page-wrapper">
+	<div id=service-jumbotron class="jumbotron">
+			<h2>
+				<span class="sr">Usluge i online ponuda</span><span class="en">Services and online offer</span>
+			</h2>
+			<p>Lorem ipsum dolor sit amet, ea cum decore facilis vituperatoribus, integre labitur vis id. Est id nisl deseruisse, illud scripta salutandi per in, vim saperet liberavisse ea. Id vis ceteros argumentum contentiones. Saperet impedit vis te, sea at recteque maiestatis voluptaria, vix ex cibo dictas. Ne nam nibh gubergren.<a href="#regForm">Klikni me klikni</a></p>
+	</div>
+	<div class="container col-xl-5" id="form-container" id="formFocus">
+
+		<form id="regForm" action="/send-request" method="POST">
+			{% csrf_token %}
+			<div class="tab">
+				<!-- PRVI TAB -->
+				<div class="form-group">
+					<label class="label-text" for="email">Email:</label>
+					<input type="email" data-translate="email_placeHolder" class="form-control" id="email" placeholder="Enter email" required name="email">
+				</div>
+
+				<div class="form-group">
+					<label class="label-text" for="company_name"><span class="sr">Naziv firme:</span><span class="en">Company name:</span></label>
+					<input type="text" data-translate="company_name_placeHolder" class="form-control" id="company_name" placeholder="Enter company name"
+					name="company_name">
+				</div>
+
+				<div class="row">
+					<div class="col-xl-6 radio-group left-radio-group">
+						<label class="label-text"><span class="sr">Obveznik PDV-a:</span><span class="en">VAT tax payer:</span></label>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="VAT1" name="VAT_tax_payer" value="da" checked>
+							<label class="custom-control-label" for="VAT1">
+								<span class="sr">Da</span><span class="en">Yes</span>
+							</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="VAT2" name="VAT_tax_payer" value="ne">
+							<label class="custom-control-label" for="VAT2">
+								<span class="sr">Ne</span><span class="en">No</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-xl-6 radio-group right-radio-group">
+						<label class="label-text"><span class="sr">Da li tražite povrate PDV-a?</span><span class="en">Do you apply for VAT return?</span></label>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="VAT3" name="VAT_return" value="da" checked>
+							<label class="custom-control-label" for="VAT3">
+								<span class="sr">Da</span><span class="en">Yes</span>
+							</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="VAT4" name="VAT_return" value="ne">
+							<label class="custom-control-label" for="VAT4">
+								<span class="sr">Ne</span><span class="en">No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-xl-12 radio-group">
+					<label class="label-text">
+						<span class="sr">Usluga fakturisanja na našem sofware-u i slanja faktura kupcima poštom ili email-om:</span>
+						<span class="en">Output invoicing on our software and delivering invoices to your customer by post or mail:
+						</span>
+					</label>
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="dlv1" name="software_and_delivering" value="da" checked>
+						<label class="custom-control-label" for="dlv1">
+							<span class="sr">Da</span><span class="en">Yes</span>
+						</label>
+					</div>
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="dlv2" name="software_and_delivering" value="ne">
+						<label class="custom-control-label" for="dlv2">
+							<span class="sr">Ne</span><span class="en">No</span>
+						</label>
+					</div>
+				</div>
+				</div>
+				<div class="form-group">
+					<label class="label-text" for="numinv"><span class="sr">Broj izlaznih faktura mesečno:</span><span class="en">Number of output invoices per month:</span>
+					</label>
+					<input type="text" class="form-control" id="numinv" data-translate="number_invoices_placeHolder" placeholder="" name="number_output_invoices">
+				</div>
+				<a href=""></a>
+			</div>
+			<div class="tab">
+				<!-- DRUGI TAB -->
+				<div class="radio-group">
+					<label class="label-text">
+						<span class="sr">Administriranje fonda zdravstva i penzionog fonda, <i>prijava/odjava</i> i upis staža zaposlenih:</span>
+						<span class="en">Health insurance and pensions fond services, <i>application and checkout</i> of employees, and other administrative procedures in fonds - do You need this service?</span>
+					</label>
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="insurance1" name="insurence" value="da" checked>
+						<label class="custom-control-label" for="insurance1">
+							<span class="sr">Da</span><span class="en">Yes</span>
+						</label>
+					</div>
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="insurance2" name="insurence" value="ne">
+						<label class="custom-control-label" for="insurance2">
+							<span class="sr">Ne</span><span class="en">No</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="label-text" for="numemp"><span class="sr">Broj zaposlenih:</span><span class="en">Number of employees:</span>
+					</label>
+					<input type="text" class="form-control" id="numemp" data-translate="number_employees_placeHolder" placeholder="" name="number_employees">
+				</div>
+
+				<div class="row">
+					<div class="col-xl-6 radio-group">
+						<label class="label-text">
+							<span class="sr">Uluge elektronskog plaćanja- <i>domaći platni promet:</i></span>
+							<span class="en">E-banking payment services- <i>domestic payments:</i></span>
+						</label>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="ebankd1" name="domestic_ebank" value="da" checked>
+							<label class="custom-control-label" for="ebankd1">
+								<span class="sr">Da</span><span class="en">Yes</span>
+							</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="ebankd2" name="domestic_ebank" value="ne">
+							<label class="custom-control-label" for="ebankd2">
+								<span class="sr">Ne</span><span class="en">No</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-xl-6 radio-group right-radio-group">
+						<label class="label-text">
+							<span class="sr">Uluge elektronskog plaćanja- <i>međunarodni platni promet:</i></span>
+							<span class="en">E-banking payment services - <i>international payments:</i></span>
+						</label>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="ebanki1" name="international_ebank" value="da" checked>
+							<label class="custom-control-label" for="ebanki1">
+								<span class="sr">Da</span><span class="en">Yes</span>
+							</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="ebanki2" name="international_ebank" value="ne">
+							<label class="custom-control-label" for="ebanki2">
+								<span class="sr">Ne</span><span class="en">No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="label-text" for="numdominv">
+						<span class="sr">Broj domaćih ulaznih faktura mesečno:</span><span class="en">Number of domestic input invoices per month:</span>
+					</label>
+					<input type="text" class="form-control" id="numdominv" data-translate="number_d_invoices_placeHolder" placeholder="" 
+					name="number_domestic_input_invoices">
+				</div>
+
+				<div class="form-group">
+					<label class="label-text" for="numintinv">
+						<span class="sr">Broj inostranih ulaznih faktura mesečno:</span>
+						<span class="en">Number of international input invoices per month:</span>
+					</label>
+					<input type="text" class="form-control" id="numintinv" data-translate="number_i_invoices_placeHolder" placeholder="" 
+					name="number_iternational_input_invoices">
+				</div>
+
+				
+
+			</div>
+			<div class="tab">
+				<!--TRECI TAB -->
+				<div class="row">
+					<div class="radio-group col-xl-5 ">
+						<label class="label-text">
+							<span class="sr">Uvoz robe:</span>
+							<span class="en">Import of goods</span>
+						</label>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="import1" name="import" value="da" checked>
+							<label class="custom-control-label" for="import1">
+								<span class="sr">Da</span><span class="en">Yes</span>
+							</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="import2" name="import" value="ne">
+							<label class="custom-control-label" for="import2">
+								<span class="sr">Ne</span><span class="en">No</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="radio-group col-xl-5 right-radio-group" id="export-radio-group">
+						<label class="label-text">
+							<span class="sr">Izvoz robe:</span>
+							<span class="en">Export of goods</span>
+						</label>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="export1" name="export" value="da" checked>
+							<label class="custom-control-label" for="export1">
+								<span class="sr">Da</span><span class="en">Yes</span>
+							</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="export2" name="export" value="ne">
+							<label class="custom-control-label" for="export2">
+								<span class="sr">Ne</span><span class="en">No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="label-text" for="numcard">
+						<span class="sr">Broj poslovnih platnih kartica:</span>
+						<span class="en">Number of business credit cards:</span>
+					</label>
+					<input type="text" class="form-control" id="numcard" data-translate="number_ccard_placeHolder" placeholder="" 
+					name="number_business_credit_cards">
+				</div>
+
+				<div class="radio-group">
+					<label class="label-text">
+						<span class="sr"><i>Kurirska služba</i>- Da li je potrebna za preuzimanje i dostavljanje dokumenata:</span>
+						<span class="en"><i>Courier services</i>- Is it necesary for takeover and delivering documents?</span>
+					</label>
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="courier1" name="courier" value="da" checked>
+						<label class="custom-control-label" for="courier1">
+							<span class="sr">Da</span><span class="en">Yes</span>
+						</label>
+					</div>
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="courier2" name="courier" value="ne">
+						<label class="custom-control-label" for="courier2">
+							<span class="sr">Ne</span><span class="en">No</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="label-text" for="numpayedinv">
+						<span class="sr">Broj gotovinskih računa mesečno:</span>
+						<span class="en">Number of cash payed invoices:</span>
+					</label>
+					<input type="text" class="form-control" id="numpayedinv" data-translate="number_payed_invs_placeHolder" placeholder="" 
+					name="number_cash_invoices">
+				</div>
+
+				<div class="form-group">
+					<label class="label-text" for="numassets">
+						<span class="sr">Broj osnovnih sredstava:</span>
+						<span class="en">Number of fixed assets:</span>
+					</label>
+					<input type="text" class="form-control" id="numassets" data-translate="number_assets_placeHolder" placeholder="" 
+					name="number_fixes_assets">
+				</div>
+
+				<div class="form-group">
+	  			<label class="label-text" for="remark">
+	  				<span class="sr">Napomena:</span><span class="en">Aditional remark:</span>
+	  			</label>
+	  			<textarea class="form-control" rows="5" id="remark" name="remark"></textarea>
+			</div>
+
+			</div>
+			<div style="overflow:auto;">
+				<div style="float:right;">
+					<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+					<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+				</div>
+			</div>
+
+			
+
+			<!-- Circles which indicates the steps of the form: -->
+			<div style="text-align:center;margin-top:40px;">
+				<span class="step"></span>
+				<span class="step"></span>
+				<span class="step"></span>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

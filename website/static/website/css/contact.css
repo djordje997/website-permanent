@@ -1,0 +1,34 @@
+.map iframe{
+	width:100%;
+	height:400px;
+	padding-top: 0px;
+}
+.contact-div{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.contact-logo-img{
+	width: 450px;
+	height: 253px;
+	margin-bottom: 0px;
+	visibility: hidden;
+}
+.contact-small-div{
+	display: inline-block;
+	text-align: center;
+}
+.contact-small-div p {
+	margin-top: 5px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: medium;
+}
+.glyphicon{
+	color: rgba(35,53,143,1.0);/*rgba(35,53,143,0.7);*/
+	font-size: 30px;
+}
+.glyphicon:hover{
+	color: rgba(33,28,98,1.0);
+}

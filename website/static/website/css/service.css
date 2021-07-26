@@ -1,0 +1,120 @@
+
+#services-page{
+  background-color: #f2f2f2;
+}
+#service-jumbotron{
+ /* font-family: "Lucida Bright", Lucida, serif;*/
+  font-family: Arial, Helvetica, sans-serif; 
+  /*text-align: center;*/
+}
+#service-jumbotron h2{
+  text-align: center;
+}
+
+
+#form-container{
+  background-color: white;
+  border: 1px solid #d2d3d5;
+  border-radius: 8px;
+  box-shadow: 5px 10px 10px #d9d9d9;
+}
+#regForm{
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #d2d3d5;
+  border: none; 
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+  background-color: #233592;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #233592;
+}
+
+.custom-control-label{
+  color: #404040;
+}
+.custom-radio .custom-control-input:checked~.custom-control-label::before {
+    background-color: #336699;
+}
+
+.custom-radio .custom-control-label::before {
+    background-color: #d2d3d5;  
+}
+.custom-radio .custom-control-input:checked~.custom-control-label::after {
+    background-color: #336699;/*#669999*/ 
+    border-radius: 50%;
+}
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 0.2rem #999999; 
+}
+
+.right-radio-group{
+  border-left: 1px solid #ced4da;
+  padding-left: 3rem;
+  /*border-right: 1px solid #ced4da;*/
+}
+
+.radio-group{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+}
+.radio-group div{
+  margin-left: 1rem;
+}
+#export-radio-group{
+  padding-left: 8rem;
+}
+
+.label-text {
+  margin-top: 1.2rem;
+  font-family: "Lucida Bright", Lucida, serif;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+#regForm button{
+  
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  height: 3rem;
+  width: 7rem;
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  margin-bottom: 1rem;
+  margin-right: 0.3rem;
+}
+#regForm button:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24), 0 10px 16px 0 rgba(0,0,0,0.19);
+}
+
+#nextBtn{
+  background-color: #233592;
+}
+#prevBtn{
+  background-color: #737373;
+}

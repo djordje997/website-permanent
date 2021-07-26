@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'website/js/language.js' %}"></script>
+    <script src="{% static 'website/js/index_temp.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/index_temp.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/references.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/contact.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/service.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Raleway|Open+Sans"
+        rel="stylesheet">
+    <title>Permanent</title>
+</head>
+
+<body>
+    <div class="container-fluid" id="container">
+        <nav class="navbar navbar-light fixed-top navbar-expand-lg">
+            <a class="navbar-brand" href="home">LOGO</a>
+            <button class="navbar-toggler mx-5" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-5">
+                    <li class="nav-item mx-3 " id="home">
+                        <a class="nav-link" href="home"><span id="nav_home_sr_span" class="sr">O
+                                nama</span><span class="en">About us</span><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-3" id="reference">
+                        <a class="nav-link" href="reference">
+                            <span class="sr">Reference</span>
+                            <span class="en">References</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-3" id="contact">
+                        <a class="nav-link" href="contact">
+                            <span class="sr">Kontakt</span>
+                            <span class="en">Contact</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown" id="language">
+                        <a class="nav-link dropdown-toggle" href="language" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Language</span>
+                            <!-- <span>Jezik</span> -->
+                        </a>
+
+                        <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item m-0 p-2" href="#"><span>English</span>
+                                <span>Engleski</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item m-0 p-2" href="#"><span>Serbian</span>
+                                <span>Srpski</span></a>
+                        </div>
+                    </li>
+                </ul>
+                <!--  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+            </div>
+        </nav>
+        <div id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>
